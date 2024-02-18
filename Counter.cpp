@@ -5,23 +5,24 @@
 
 #include <iostream>
 #include <cctype>
+#include "Counter.h"
 
 // Function to count lines
-int countLines() {
+int MKNTHA093::countLines() {
     int lineCount = 0;
     std::string line;
-    while (std::getline(std::cin, line)) {
+    while (std::getline(std::cin, line)) { //for each line read increment lineCount
         lineCount++;
     }
     return lineCount;
 }
 
 // Function to count words
-int countWords(const std::string &line) {
+int MKNTHA093::countWords(const std::string &line) {
     int wordCount = 0;
     bool inWord = false;
     for (char c : line) {
-        if (std::isalnum(c)) {
+        if (std::isalnum(c)) { // check is if word is alphanumeric
             if (!inWord) {
                 wordCount++;
                 inWord = true;
@@ -34,7 +35,7 @@ int countWords(const std::string &line) {
 }
 
 // Function to count characters
-int countCharacters(const std::string &line) {
+int MKNTHA093::countCharacters(const std::string &line) {
     int charCount = 0;
     for (char c : line) {
         if (std::isalnum(c)) {
