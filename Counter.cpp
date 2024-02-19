@@ -5,42 +5,40 @@
 
 #include <iostream>
 #include <cctype>
+#include <vector>
+#include "CharInfo.h"
 #include "Counter.h"
 
-// Function to count lines
-int MKNTHA093::countLines() {
-    int lineCount = 0;
-    std::string line;
-    while (std::getline(std::cin, line)) { //for each line read increment lineCount
-        lineCount++;
-    }
-    return lineCount;
-}
+namespace MKNTHA093 {
 
-// Function to count words
-int MKNTHA093::countWords(const std::string &line) {
-    int wordCount = 0;
-    bool inWord = false;
-    for (char c : line) {
-        if (std::isalnum(c)) { // check is if word is alphanumeric
-            if (!inWord) {
-                wordCount++;
-                inWord = true;
+    void WC() {
+        std::string line;
+        int lineCount = 0;
+        int wordCount = 0;
+        int charCount = 0;
+
+        std::vector<CharInfo> charFrequency(256, {'\0', 0});
+
+        while (std::getline(std::cin, line)) {
+            lineCount++;
+
+            bool inWord = false;
+            for (char c : line) {
+                if (std::isalnum(c)) {
+                    if (!inWord) {
+                        wordCount++;
+                        inWord = true;
+                    }
+                    charCount++;
+                    charFrequency[std::tolower(c)].character = std::tolower(c); // Convert to lowercase
+                    charFrequency[std::tolower(c)].count++;
+                } else {
+                    inWord = false;
+                }
             }
-        } else {
-            inWord = false;
         }
-    }
-    return wordCount;
-}
 
-// Function to count characters
-int MKNTHA093::countCharacters(const std::string &line) {
-    int charCount = 0;
-    for (char c : line) {
-        if (std::isalnum(c)) {
-            charCount++;
-        }
+        std::cout << lineCount << " " << wordCount << " " << charCount << " ";
+        printCharFrequency(charFrequency);
     }
-    return charCount;
 }

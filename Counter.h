@@ -8,10 +8,6 @@
 
 namespace MKNTHA093{
 
-    int countWords(const std::string &line);
-
-    int countLines();
-
-    int countCharacters(const std::string &line);
+    void WC();
 }
 #endif //WORDCOUNTER_COUNTER_H
