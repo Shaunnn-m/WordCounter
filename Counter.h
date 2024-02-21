@@ -1,5 +1,5 @@
 //
-// Created by Thabanhg Mokoena on 2024/02/16.
+// Created by Thabang Mokoena on 2024/02/16.
 //
 
 #ifndef WORDCOUNTER_COUNTER_H

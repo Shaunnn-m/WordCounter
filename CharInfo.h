@@ -4,14 +4,16 @@
 
 #ifndef WORDCOUNTER_CHARINFO_H
 #define WORDCOUNTER_CHARINFO_H
+
 namespace MKNTHA093 {
+
     struct CharInfo {
         char character;
         long count;
 
     };
 
-    std::vector<CharInfo> createCharFrequencyTable();
+    void printCharFrequency(const std::vector<CharInfo> &charFrequency);
 
 }
 #endif //WORDCOUNTER_CHARINFO_H

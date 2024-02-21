@@ -37,7 +37,6 @@ namespace MKNTHA093 {
                 }
             }
         }
-
         std::cout << lineCount << " " << wordCount << " " << charCount << " ";
         printCharFrequency(charFrequency);
     }

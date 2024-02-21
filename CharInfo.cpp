@@ -3,26 +3,19 @@
 //
 
 #include <vector>
-#include <cctype>
-#include <string>
+
 #include <iostream>
 #include "CharInfo.h"
 
 
-
-
-std::vector<MKNTHA093::CharInfo> MKNTHA093:: createCharFrequencyTable() {
-
-    std::vector<CharInfo> frequencyTable(256); // Assuming ASCII characters
-    std::string line;
-
-    while (std::getline(std::cin, line)) {
-        for (char c: line) {
-            if (std::isalnum(c)) {
-                frequencyTable[c].character = c;
-                frequencyTable[c].count++;
+namespace MKNTHA093 {
+    void printCharFrequency(const std::vector<CharInfo> &charFrequency) {
+        std::cout << "[";
+        for (int i = 0; i < charFrequency.size(); ++i) {
+            if (charFrequency[i].count > 0) {
+                std::cout << charFrequency[i].character << ":" << charFrequency[i].count << " ";
             }
         }
+        std::cout << "]" << std::endl;
     }
-    return frequencyTable;
 }
