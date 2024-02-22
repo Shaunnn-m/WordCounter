@@ -33,7 +33,7 @@ namespace MKNTHA093 {
                     charFrequency[std::tolower(c)].character = std::tolower(c); // Convert to lowercase
                     charFrequency[std::tolower(c)].count++;
                 } else {
-                    inWord = false;
+                     inWord = false;
                 }
             }
         }
